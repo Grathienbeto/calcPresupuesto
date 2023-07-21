@@ -1,0 +1,37 @@
+* {
+  /* margin: 0;
+  padding: 0; */
+  box-sizing: border-box;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.labelCorreccion {
+  display: block;
+}
+
+body {
+  background-color: lightgray;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Bodoni Moda", serif;
+}
+
+label {
+  font-family: "Open Sans", sans-serif;
+}
+
+#resultado p {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.5rem;
+}

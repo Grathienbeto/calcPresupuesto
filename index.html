@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bodoni+Moda&family=Open+Sans:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Calculadora Presupuestos</title>
+  </head>
+  <body>
+    <form action="#">
+      <!-- Seccion de input de palabras -->
+      <section>
+        <div class="input_div">
+          <h2>INGRESO DE PALABRAS</h2>
+          <label for="input_palabras">Cantidad de palabras: </label>
+          <input type="number" class="input_palabras" id="input_palabras" />
+        </div>
+      </section>
+
+      <!-- Seccion de correccion ortotipografica -->
+      <section>
+        <h2>CORRECCION</h2>
+        <label for="check1c" class="labelCorreccion">
+          <input
+            type="checkbox"
+            name="checkCorr"
+            id="check1c"
+            class="inputCorreccion"
+            value="1"
+          />
+          Ortotipografía
+        </label>
+        <label for="check2c" class="labelCorreccion">
+          <input
+            type="checkbox"
+            name="checkCorr"
+            id="check2c"
+            class="inputCorreccion"
+            value="2"
+          />
+          Estilo
+        </label>
+        <label for="check3c" class="labelCorreccion">
+          <input
+            type="checkbox"
+            name="checkCorr"
+            id="check3c"
+            class="inputCorreccion"
+            value="3"
+          />
+          Narrativa (incluye informe)
+        </label>
+        <label for="check4c" class="labelCorreccion">
+          <input
+            type="checkbox"
+            name="checkCorr"
+            id="check4c"
+            class="inputCorreccion"
+            value="4"
+          />
+          Informe de lectura
+        </label>
+        <label for="check5c" class="labelCorreccion">
+          <input
+            type="checkbox"
+            name="checkCorr"
+            id="check5c"
+            class="inputCorreccion"
+            value="5"
+          />
+          Corrección de pruebas
+        </label>
+      </section>
+
+      <section>
+        <h2>MAQUETACION</h2>
+        <div>
+          <label for="radio0m" class="">
+            <input
+              type="radio"
+              class="inputMaquetacion"
+              name="maquetacion"
+              value="0"
+              id="radio0m"
+            />
+            Sencilla
+          </label>
+
+          <label for="radio1m" class="">
+            <input
+              type="radio"
+              class="inputMaquetacion"
+              name="maquetacion"
+              value="1"
+              id="radio1m"
+            />
+            Compleja
+          </label>
+
+          <label for="check1m" class="labelCorreccion">
+            <input
+              type="checkbox"
+              class="inputMaquetacion"
+              value="1"
+              id="check1m"
+            />
+            Digital
+          </label>
+        </div>
+      </section>
+
+      <section>
+        <h2>PORTADA</h2>
+        <div>
+          <!-- tipo de portada -->
+          <label for="tipoPortada0">
+            <input
+              type="radio"
+              class="tipoPortada"
+              name="tipoPortada"
+              id="tipoPortada0"
+            />Imagen con recursos libres
+          </label>
+          <label for="tipoPortada1">
+            <input
+              type="radio"
+              class="tipoPortada"
+              name="tipoPortada"
+              id="tipoPortada1"
+            />
+            Ilustracion Digital
+          </label>
+        </div>
+
+        <!-- formato -->
+        <div>
+          <label for="formato0">
+            <input
+              type="radio"
+              class="formato"
+              name="formato"
+              id="formato0"
+            />E-book
+          </label>
+          <label for="formato1">
+            <input type="radio" class="formato" name="formato" id="formato1" />
+            Completa (E-book + Banner)
+          </label>
+        </div>
+      </section>
+
+      <!-- complejidad -->
+      <div>
+        <label for="complejidad0">
+          <input
+            type="radio"
+            class="complejidad"
+            name="complejidad"
+            id="complejidad0"
+          />Normal
+        </label>
+        <label for="complejidad1">
+          <input type="radio" class="complejidad" name="complejidad" id="complejidad1" />
+          Alta
+        </label>
+      </div>
+    </section>
+
+    <section>
+      <h2>DESCUENTO</h2>
+      <input type="radio" >
+    </section>
+
+      <button class="btnCalcular">CALCULAR</button>
+    </form>
+
+    <div id="resultado">
+    </div>
+    <script src="./app.js"></script>
+  </body>
+</html>
