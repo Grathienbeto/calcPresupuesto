@@ -3,7 +3,6 @@ const btnCalcular = document.querySelector(".btnCalcular");
 const corrElem = document.getElementsByName("checkCorr");
 const maqElem = document.getElementsByName("maquetacion");
 const maqDig = document.querySelector("#check1m");
-
 const tipoPortada = document.getElementsByName("tipoPortada");
 const formato = document.getElementsByName("formato");
 const complejidad = document.getElementsByName("complejidad");
@@ -194,5 +193,6 @@ function calcularPortada() {
 function pintarResultado(total) {
   const displayDiv = document.querySelector("#resultado");
   displayDiv.innerHTML = `<p>TOTAL: $${total}</p>
-  <p>COMISION CON PAYPAL: $${total * 1.054 + 0.3}</p>`;
+  <p>COMISION CON PAYPAL: $${total * 1.054 + 0.3}</p>
+  <p>COMISION CON WESTERN: $${total * 1.05}</p>`;
 }
