@@ -191,8 +191,11 @@ function calcularPortada() {
 
 // Pinta el resultado en pantalla
 function pintarResultado(total) {
+  let final = parseFloat(total).toFixed(2);
+  let finalPP = parseFloat(total * 1.054 + 0.3).toFixed(2);
+  let finalWB = parseFloat(total * 1.05).toFixed(2);
   const displayDiv = document.querySelector("#resultado");
-  displayDiv.innerHTML = `<p>TOTAL: $${total}</p>
-  <p>COMISION CON PAYPAL: $${total * 1.054 + 0.3}</p>
-  <p>COMISION CON WESTERN: $${total * 1.05}</p>`;
+  displayDiv.innerHTML = `<p>TOTAL: $${final}</p>
+  <p>COMISION CON PAYPAL: $${finalPP}</p>
+  <p>COMISION CON WESTERN: $${finalWB}</p>`;
 }
