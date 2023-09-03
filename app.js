@@ -10,17 +10,14 @@ const complejidad = document.getElementsByName("complejidad");
 
 btnCalcular.addEventListener("click", (e) => {
   e.preventDefault();
+
   const palabras = getWordCount();
-  console.log(palabras);
+
   const totalCorreccion = calculateCorreccion(palabras);
   const totalMaquetacion = calculateMaquetacion(palabras);
   const totalPortada = calcularPortada();
   const total = totalCorreccion + totalMaquetacion + totalPortada;
 
-  console.log("Correccion: " + totalCorreccion);
-  console.log("Maquetacion: " + totalMaquetacion);
-  console.log("Portada: " + totalPortada);
-  console.log("Costo total: " + total);
   pintarResultado(total);
 });
 
@@ -43,29 +40,33 @@ function calculateCorreccion(palabras) {
 
   if (corrElem[2].checked) {
     if (palabras <= 30999) {
-      parcialCorreccion += 50;
+      parcialCorreccion += 45;
     } else if (palabras <= 50999) {
       parcialCorreccion += 60;
     } else if (palabras <= 80999) {
-      parcialCorreccion += 70;
+      parcialCorreccion += 85;
     } else if (palabras <= 100999) {
       parcialCorreccion += 120;
     } else if (palabras <= 150999) {
-      parcialCorreccion += 230;
+      parcialCorreccion += 165;
     } else if (palabras > 150999) {
-      parcialCorreccion += 300;
+      parcialCorreccion += 220;
     }
   }
 
   if (corrElem[3].checked && corrElem[2].checked === false) {
     if (palabras <= 30999) {
-      parcialCorreccion += 30;
+      parcialCorreccion += 35;
     } else if (palabras <= 50999) {
       parcialCorreccion += 50;
+    } else if (palabras <= 80999) {
+      parcialCorreccion += 70;
     } else if (palabras <= 100999) {
-      parcialCorreccion += 100;
-    } else if (palabras > 100999) {
-      parcialCorreccion += 120;
+      parcialCorreccion += 95;
+    } else if (palabras <= 150999) {
+      parcialCorreccion += 125;
+    } else if (palabras > 150999) {
+      parcialCorreccion += 160;
     }
   }
 
@@ -130,20 +131,18 @@ function calcularMaquetacion(palabras, value) {
 function calcularDigital(palabras, value) {
   let parcial = 0;
   const precios = [
-    [13, 18, 35, 65, 80],
-    [30, 30, 70, 90, 120],
+    [18, 35, 65, 80],
+    [30, 70, 90, 120],
   ];
 
-  if (palabras <= 10999) {
+  if (palabras <= 20999) {
     parcial += precios[value][0];
-  } else if (palabras <= 20999) {
-    parcial += precios[value][1];
   } else if (palabras <= 50999) {
-    parcial += precios[value][2];
+    parcial += precios[value][1];
   } else if (palabras <= 100999) {
-    parcial += precios[value][3];
+    parcial += precios[value][2];
   } else if (palabras > 100999) {
-    parcial += precios[value][4];
+    parcial += precios[value][3];
   }
 
   return parcial;
@@ -194,5 +193,6 @@ function calcularPortada() {
 // Pinta el resultado en pantalla
 function pintarResultado(total) {
   const displayDiv = document.querySelector("#resultado");
-  displayDiv.innerHTML = `<p>TOTAL: $${total}</p>`;
+  displayDiv.innerHTML = `<p>TOTAL: $${total}</p>
+  <p>COMISION CON PAYPAL: $${total * 1.054 + 0.3}</p>`;
 }
